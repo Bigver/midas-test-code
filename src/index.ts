@@ -1,6 +1,6 @@
 type Portal = { location: number; destination: number };
 
-function quickestPath({ portals }: { portals: Portal[] }): number {
+function quickestPath(portals: Portal[]): number {
   const portalMap = new Map<number, number>();
   for (const { location, destination } of portals) {
     portalMap.set(location, destination);
@@ -11,7 +11,6 @@ function quickestPath({ portals }: { portals: Portal[] }): number {
 
   while (queue.length > 0) {
     const [position, turns] = queue.shift()!;
-
     if (position === 200) return turns;
 
     for (let step = 1; step <= 11; step++) {
@@ -32,7 +31,6 @@ function quickestPath({ portals }: { portals: Portal[] }): number {
   return -1;
 }
 
-
 const portals = [
   { location: 55, destination: 38 },
   { location: 14, destination: 35 },
@@ -51,5 +49,5 @@ const portals = [
   { location: 180, destination: 200 },
 ];
 
-const result = quickestPath({ portals });
+const result = quickestPath(portals);
 console.log(result); // คำตอบคือ 6 ตามตัวอย่าง
