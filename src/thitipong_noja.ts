@@ -49,5 +49,6 @@ const portals = [
   { location: 180, destination: 200 },
 ];
 
+
 const result = quickestPath(portals);
 console.log(result); // คำตอบคือ 6 ตามตัวอย่าง
